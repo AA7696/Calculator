@@ -1,7 +1,6 @@
 import { StatusBar } from 'react-native';
 import { Dimensions, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { ErrorBoundary } from "react-error-boundary";
 import SimpleCalc from '../Screens/SimpleCalc';

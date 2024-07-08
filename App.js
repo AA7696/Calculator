@@ -17,9 +17,7 @@ export default function App() {
     <>
     <ErrorBoundary>
       <SafeAreaView style={{ flex: 1 }}>
-    <NavigationContainer
-    independent={true}
-    >
+    <NavigationContainer>
       <Stack.Navigator
       initialRouteName='Splash'
       screenOptions={{
