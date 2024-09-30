@@ -1,4 +1,4 @@
-import { StatusBar } from 'react-native';
+import { ImageBackground, StatusBar } from 'react-native';
 import { Dimensions, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
 import Mexp from 'math-expression-evaluator'
@@ -74,13 +74,18 @@ export default function SimpleCalc() {
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ width: width, height: height / 2.5, backgroundColor: 'black', padding: 12, justifyContent: 'flex-end' }}>
-          <Text style={{ fontSize: 40, color: '#d3d3d3', textAlign: 'right', }}>
+        <View style={{ width: width, height: height / 2.5, backgroundColor: 'black' }}>
+        <ImageBackground
+        source={require('../assets/me2.png')}
+        style={{ width: width, height: height / 2.5 , padding: 20, justifyContent: 'flex-end'}}
+        >
+        <Text style={{ fontSize: 40, color: '#d3d3d3', textAlign: 'right', }}>
             {operation}
           </Text>
           <Text style={{ fontSize: 40, color: 'white', textAlign: 'right', }}>
             {btnText}
           </Text>
+        </ImageBackground>
         </View>
 
         <KeyboardAvoidingView style={{ width: width, flex: 1, backgroundColor: 'black' }}>

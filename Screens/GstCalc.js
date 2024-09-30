@@ -1,4 +1,4 @@
-import { StatusBar } from 'react-native';
+import { ImageBackground, StatusBar } from 'react-native';
 import { Dimensions, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import Button from '../component/Button';
 import { useEffect, useState } from 'react';
@@ -66,7 +66,7 @@ export default function App() {
         setOperation(btnText)
         let value = mexp.eval(btnText);
         console.log(value);
-        let result = String(value);
+        let result = String(value.toFixed(2));
         setBtnText(result)
         setbasic(result)
     
@@ -177,7 +177,9 @@ export default function App() {
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ width: width, height: height / 2.5, backgroundColor: 'black', padding: 12 }}>
+        <ImageBackground 
+        source={require('../assets/me2.png')}
+        style={{ width: width, height: height / 2.5, backgroundColor: 'black', padding: 12 }}>
           <View style={{ fontSize: 20, color: '#d3d3d3', width: width - 24, borderColor: 'orange', borderWidth: 1 }}>
             <View style={{ width: width - 24, display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={{ color: 'white', fontSize: 20 }}>Net Price: </Text>
@@ -212,7 +214,7 @@ export default function App() {
           <Text style={{ fontSize: 35, color: 'white', textAlign: 'right', }}>
             {btnText}
           </Text>
-        </View>
+        </ImageBackground>
 
         <View style={{ width: width, flex: 1, backgroundColor: 'black' }}>
           <View style={{ width: width, height: '14%', flexDirection: 'row', gap: 22, padding: 5 }}>
